@@ -1,0 +1,96 @@
+using System;
+using System.Collections.Generic;
+
+namespace Conjuntos_y_Árboles
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Inicialización de variables
+            HashSet<int> conjuntoA = new HashSet<int>();
+            HashSet<int> conjuntoB = new HashSet<int>();
+            int aumentoA = 1;
+            int aumentoB = 1;
+
+            //Solicitud de datos
+            Console.WriteLine("Conjuntos.");
+            Console.WriteLine("Ingrese 5 valores para el conjunto A.");
+
+            for (int i = 1; i <=5; i++)
+            {
+                Console.Write("[{0}] ", aumentoA++);
+                int variable = int.Parse(Console.ReadLine());
+                conjuntoA.Add(variable);
+            }
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("Ingrese 5 valores para el conjunto B.");
+
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.Write("[{0}] ", aumentoB++);
+                int variable = int.Parse(Console.ReadLine());
+                conjuntoB.Add(variable);
+            }
+
+            //Mostrar por pantalla los datos digitados
+            Console.Write("Conjunto A= [");
+            foreach (int item in conjuntoA)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine("]");
+
+            Console.Write("Conjunto B= [");
+            foreach (int item in conjuntoB)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine("]");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("Operaciones de Conjuntos.");
+
+            //Operación Unión UnionWith()
+            HashSet<int> Unión = new HashSet<int>(conjuntoA);
+            Unión.UnionWith(conjuntoB);
+            Console.Write("Unión= [");
+            foreach (int item in Unión)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine("]");
+
+            //Operación Intersección IntersectWith()
+            HashSet<int> Intersección = new HashSet<int>(conjuntoA);
+            Intersección.IntersectWith(conjuntoB);
+            Console.Write("Intersección= [");
+            foreach (int item in Intersección)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine("]");
+
+            //Operación Diferencia ExceptWith()
+            HashSet<int> Diferencia = new HashSet<int>(conjuntoA);
+            Diferencia.ExceptWith(conjuntoB);
+            Console.Write("Diferencia= [");
+            foreach (int item in Diferencia)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine("]");
+
+            //Operación Diferencia Simétrica SymmetricExceptWith()
+            HashSet<int> DiferenciaSimétrica = new HashSet<int>(conjuntoA);
+            DiferenciaSimétrica.SymmetricExceptWith(conjuntoB);
+            Console.Write("Diferencia Simétrica= [");
+            foreach (int item in DiferenciaSimétrica)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine("]");
+
+            Console.ReadKey();
+        }
+    }
+}
