@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+
+namespace Conjuntos_y_Árboles
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Inicialización de variables
+            List<Usuarios> listaUsuarios = new List<Usuarios>()
+            {
+            new Usuarios() { Nombre = "David Cardona", Edad = 19 },
+            new Usuarios() { Nombre = "Alejandro Gómez", Edad = 21 },
+            new Usuarios() { Nombre = "Josh Drake", Edad = 67 },
+            };
+
+            //Iteración para mostrar la Lista
+            for (int i = 0; i < listaUsuarios.Count; i++)
+            {
+                Console.WriteLine("Nombre y apellido = "+listaUsuarios[i].Nombre + " y Edad = " + listaUsuarios[i].Edad + " años.");
+            }
+            Console.ReadKey();
+        }
+    }
+
+    //Estructura de Datos: clase
+    public class Usuarios
+    {
+        public string Nombre { get; set; }
+        public int Edad { get; set; }
+    }
+}
